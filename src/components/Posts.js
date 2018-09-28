@@ -1,8 +1,15 @@
 import React, { Component } from 'react'
 import Post from './Post'
 import FakePost from '../seed/fakePost.js'
+import styled from 'styled-components';
+
+const StyledDiv = styled.div`
+background: rgb(249,249,249);
+display: block;
+`
 
 class Posts extends Component {
+
   state = {
     posts: []
   }
@@ -15,9 +22,9 @@ class Posts extends Component {
   }
   render () {
     return (
-      <div>
+      <StyledDiv>
         {this.state.posts.map(post => <Post key={post.id} post={post}/>)}
-      </div>
+      </StyledDiv>
     )
   }
 }
